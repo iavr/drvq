@@ -1,7 +1,7 @@
 [drvq](http://image.ntua.gr/iva/tools/drvq)
 ====
 
-*Dimensionality-recursive vector quantization*
+*dimensionality-recursive vector quantization*
 
 `drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in Euclidean spaces under arbitrary data distributions.
 
