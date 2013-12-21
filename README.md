@@ -13,7 +13,7 @@ Licence
 Directory structure
 -------------------
 
-`drvq` library constists primarily of template C++ header-only (`.hpp`) code, but also includes a number of tools to test the library, provided as `.cpp` files. The directory structure is:
+`drvq` library constists primarily of template C++ header-only (`.hpp`) code, but also includes a number of command-line tools to test the library, provided as `.cpp` files. The directory structure is:
 
 	/data      sample data files for testing
 	/matlab    binary file input/output tools for matlab
