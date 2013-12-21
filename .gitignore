@@ -1,3 +1,4 @@
+*.bin
 .gitignore_src
 .ignore
 src/flat
