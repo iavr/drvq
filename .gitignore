@@ -1,2 +1,6 @@
 .gitignore_src
 .ignore
+src/flat
+src/label
+src/nn
+src/train
