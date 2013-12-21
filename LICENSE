@@ -1,4 +1,8 @@
-Copyright (c) 2013, iavr
+Software License Agreement (BSD License)
+For drvq library <http://image.ntua.gr/iva/tools/drvq>.
+A C++ library for dimensionality-recursive vector quantization.
+
+Copyright (c) 2013, Yannis Avrithis <iavr@image.ntua.gr>.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
