@@ -8,7 +8,7 @@
 Licence
 -------
 
-`drvq` has 2-clause BSD license. See file LICENSE for the complete license text.
+`drvq` has a 2-clause BSD license. See file LICENSE for the complete license text.
 
 Directory structure
 -------------------
