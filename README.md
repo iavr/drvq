@@ -1,3 +1,4 @@
-# [drvq](http://image.ntua.gr/iva/tools/drvq)
+drvq
 ====
+
 Dimensionality-recursive vector quantization
