@@ -46,8 +46,6 @@ Extension `.cpp` is not necessary for the main source file. Additional source fi
 
 ### Citation
 
-Please cite our paper
+Please cite the following paper if you use this software.
 
 Yannis Avrithis. [Quantize and Conquer: A dimensionality-recursive solution to clustering, vector quantization, and image retrieval](http://image.ntua.gr/iva/publications/qc). In Proceedings of International Conference on Computer Vision (ICCV 2013), December 2013.
-
-if you use this software.
