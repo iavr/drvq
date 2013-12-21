@@ -29,7 +29,7 @@ Requirements
 Installation, building
 ----------------------
 
-No installation is needed. Command-line tools under folder `src` illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder `run/` show how a tool may be compiled and executed, using either `Clang` or `GCC`.
+No installation is needed. Command-line tools under folder `/src` illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder `run/` show how a tool may be compiled and executed, using either `Clang` or `GCC`.
 
 `drvq` has only been tested on [clang 3.3](http://llvm.org/releases/download.html#3.3) and [g++ 4.8.1](http://gcc.gnu.org/gcc-4.8/) on Linux, but it should be straightfoward to use on other platforms.
 
@@ -47,14 +47,14 @@ Binary file format
 
 All input/output to all `drcq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers, with a number of supported types for each number.
 
-Such files may be read/written by Matlab scripts `load_double_array.m`/`save_double_array.m` under folder `matlab/`. Data is represented by 2-dimensional matrices in Matlab. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under `src/lib`.
+Such files may be read/written by Matlab scripts `load_double_array.m`/`save_double_array.m` under folder `/matlab/`. Data is represented by two-dimensional matrices in Matlab. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under `/src/lib`.
 
 Sample data
 -----------
 
-With the specific information provided per tool below, one should be able to generate appropriate input and read the output of each tool. For convenience, a number of sample data files are provided under folder `data/` so that all `drvq` tools may run immediately.
+With the specific information provided per tool below, one should be able to generate appropriate input and read the output of each tool. For convenience, a number of sample data files are provided under folder `/data/` so that all `drvq` tools may run immediately.
 
-These files are part of the actual experimental data that were used under development of `drvq`. In particular, under `data/oxford/hesaff.sift/queries/descriptors/`, SIFT descriptors are given for each of the 55 cropped query images of [Oxford buildings dataset](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/), as obtained by [Hessian-affine detector](https://github.com/perdoch/hesaff). File `data/oxford/files/queries.txt` contains a relevant list of filenames.
+These files are part of the actual experimental data that were used under development of `drvq`. In particular, under `/data/oxford/hesaff.sift/queries/descriptors/`, SIFT descriptors are given for each of the 55 cropped query images of [Oxford buildings dataset](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/), as obtained by [Hessian-affine detector](https://github.com/perdoch/hesaff). File `/data/oxford/files/queries.txt` contains a relevant list of filenames.
 
 For each image, a binary file contains an array of descriptors, where each descriptor is represented by an array of `float`s.
 
