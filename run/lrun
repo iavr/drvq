@@ -1,0 +1,8 @@
+#!/bin/bash
+compiler=clang
+ivl=/data/dev/ivl
+flags="-I$ivl/include -lpthread -Os -lstdc++"
+output=$(echo $1 | sed -e 's/\..*//g')
+shift
+echo $compiler -o $output $flags $output.cpp $@
+$compiler -o $output $flags $output.cpp $@ && ./$output
