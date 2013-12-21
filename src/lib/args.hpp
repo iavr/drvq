@@ -67,7 +67,7 @@ class cmd_args : public OPT
 			return name.compare(s) == 0 || abbrev.compare(s) == 0;
 		}
 
-		void help()  // TODO: remove dummy argument
+		void help()
 		{
 			using namespace std;
 			cout << ++indent << endl << bright << abbrev << normal << ", " <<
