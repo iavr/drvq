@@ -45,7 +45,7 @@ Extension `.cpp` is not necessary for the main source file. Additional source fi
 Binary file format
 ------------------
 
-All input/output to all `drcq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers, with a number of supported types for each number.
+All input/output to all `drcq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers, with several types supported for numbers.
 
 Such files may be read/written by Matlab scripts `load_double_array.m`/`save_double_array.m` under folder `/matlab/`. Data is represented by two-dimensional matrices in Matlab. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under `/src/lib`.
 
@@ -58,8 +58,8 @@ These files are part of the actual experimental data that were used under develo
 
 For each image, a binary file contains an array of descriptors, where each descriptor is represented by an array of `float`s.
 
-`drvq` tools
-------------
+Tools
+-----
 
 ### `train`
 
