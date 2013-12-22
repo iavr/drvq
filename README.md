@@ -79,7 +79,7 @@ Because the method is hierarchical in the number of dimensions, there is no sing
 
 	5, 6, 7, 8, 9, 11
 
-which represents the codebook size per number of dimensions, with both expressed as powers of two. E.g. 2^5 = 32 centroids for 2^0 = 1 dimension, 2^6 = 64 centroids for 2^1 = 2 dimensions and so on; finally, 2^11 = 2048 centroids for 2^6 = 32 dimensions. One may freely manipulate these presets for a different application, but codebook size should generally increase with dimension, and should not increase too much beyond 2^12 or training will take too much space and time.
+which represents the codebook size per number of dimensions, with both expressed as powers of two. E.g. `2^5 = 32` centroids for `2^0 = 1` dimension, `2^6 = 64` centroids for `2^1 = 2` dimensions and so on; finally, `2^11 = 2048` centroids for `2^6 = 32` dimensions. One may freely manipulate these presets for a different application, but codebook size should generally increase with dimension, and should not increase too much beyond `2^12` or training will take too much space and time.
 
 Termination of training takes into account both progress towards convergence and the actual number of iterations so far. It is controlled by a single parameter `--theta`. The value should be positive; a lower value results in longer training.
 
