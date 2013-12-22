@@ -33,7 +33,7 @@ No installation is needed or provided. Command-line tools under folder [/src/](/
 
 `drvq` has only been tested on [clang 3.3](http://llvm.org/releases/download.html#3.3) and [g++ 4.8.1](http://gcc.gnu.org/gcc-4.8/) on Linux, but it should be straightfoward to use on other platforms.
 
-Script [/run/run](/run/run) is for GCC and [/run/lrun](/run/lrun) for Clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case,
+Script [/run/run](/run/run) is for GCC and [/run/lrun](/run/lrun) for Clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case, starting from the folder where `drvq` resides,
 
 	cd src/
 	run train
@@ -47,7 +47,7 @@ Binary file format
 
 All input/output to all `drvq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers of any type.
 
-Such files may be read/written by Matlab scripts [load_double_array.m](load_double_array.m)/[save_double_array.m](save_double_array.m) under folder [/matlab/](/matlab/). An array of arrays is is represented by a two-dimensional matrix in Matlab, but any Matlab data type may be used. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under [/src/lib](/src/lib).
+Such files may be read/written by Matlab scripts [load_double_array.m](/matlab/load_double_array.m) / [/matlab/save_double_array.m](save_double_array.m) under folder [/matlab/](/matlab/). An array of arrays is is represented by a two-dimensional matrix in Matlab, but any Matlab data type may be used. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under [/src/lib](/src/lib).
 
 Sample data
 -----------
