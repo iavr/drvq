@@ -69,7 +69,19 @@ The usage of each tool can be seen by option `-h` or `--help`, including a short
 
 Specified by [train.cpp](/src/train.cpp). Reads a set of input training data like those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space, trains one or more codebooks, and saves the codebooks in a custom binary format that is to be read by other tools. The codebooks are internally structured as binary trees over the dimensions of the space and contain additional data like lookup tables to be used for fast encoding (quantization) of new data.
 
-The first few options refer to input/output files, paths, etc. and are rather self-explanatory. Option `--dataset` acts like a preset for other such options. All "presets" are hard-coded in [/src/options/data.hpp](/src/options/data.hpp)
+The first few options refer to input/output files, paths, etc. and are rather self-explanatory. Option `--dataset` acts like a preset for other such options. All "presets" are hard-coded in [/src/options/data.hpp](/src/options/data.hpp) are can be freely changed in the source code, but each option can also be overriden. Option `--unit` is only used when a large dataset is split into individual units (chunks) stored under different folders.
+
+Because all experiments carried out refer to descriptors of images, all data are assumed to reside in individual files, one for each image. In a different application, all data may reside in a single file; in this case, the input file list provided by option `--list` would only contain a single filename.
+
+For the same, although the method supports arbitrary dimensions, only two alternatives are provided here: 64 dimensions for SURF descriptors, or 128 dimensions for SIFT descriptors, controlled by `--descriptor`. Each vector may be used as a whole, producing a single codebook, or split into sub-vectors, producing more codebooks. This is controlled by `--books`, supporting 1, 2, or 4 codebooks. E.g. SIFT vectors of 128 dimensions and 4 codebooks result in 4 sub-vectors of 32 dimensions each.
+
+Because the method is hierarchical in the number of dimensions, there is no single parameter for the target codebook size (number of centroids), but rather one such target for each level of the hierarchy. This is controlled by "preset" codebook sizes (capacities) specified in [/src/options/train.hpp](/src/options/train.hpp) and controlled by option `--capacity`. E.g. the default setting `2` for SIFT and 4 codebooks corresponds to entry
+
+	5, 6, 7, 8, 9, 11
+
+which represents the codebook size per number of dimensions, with both expressed as powers of two. E.g. 2^5 = 32 centroids for 2^0 = 1 dimension, 2^6 = 64 centroids for 2^1 = 2 dimensions and so on; finally, 2^11 = 2048 centroids for 2^6 = 32 dimensions. One may freely manipulate these presets for a different application, but codebook size should generally increase with dimension, and should not increase too much beyond 2^12 or training will take too much space and time.
+
+Termination of training takes into account both progress towards convergence and the actual number of iterations so far. It is controlled by a single parameter `--theta`. The value should be positive; a lower value results in longer training.
 
 ### `flat`
 
