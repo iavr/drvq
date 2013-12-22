@@ -29,7 +29,7 @@ Requirements
 Installation, building
 ----------------------
 
-No installation is needed. Command-line tools under folder [/src/](iavr/drvq/tree/master/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder `/run/` show how a tool may be compiled and executed, using either Clang or GCC.
+No installation is needed. Command-line tools under folder [/src/](src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder `/run/` show how a tool may be compiled and executed, using either Clang or GCC.
 
 `drvq` has only been tested on [clang 3.3](http://llvm.org/releases/download.html#3.3) and [g++ 4.8.1](http://gcc.gnu.org/gcc-4.8/) on Linux, but it should be straightfoward to use on other platforms.
 
