@@ -61,13 +61,15 @@ For each image, a binary file contains an array of descriptors, where each descr
 Tools
 -----
 
-All tools are provided as very simple, script-like `.cpp` files of few lines of code each, with all low-level implementation hidden in corresponding `.hpp` or other included files. Each `.cpp` file has a `main()` function and generates a command-line executable that can be used as a stand-alone tool for a particular job, using a rich set of command-line options. On the other hand, its source code illustrates how the library can be used, e.g. to integrate in other programs.
+All tools are provided as very simple, script-like `.cpp` files of few lines of code each, with all low-level implementation hidden in corresponding `.hpp` or other included files. Each `.cpp` file has a `main()` function and generates a command-line executable that can be used as a stand-alone tool for a particular job, using a rich set of command-line options.
+
+On the other hand, its source code illustrates how the library can be used, e.g. to integrate in other programs. One is welcome to tune the code beyond the options offered by the tools, including the data types used. This is straightforward because the implementation is using templates or type definitions where necessary. E.g. the type of all vector elements is defined as `float` at the very beginning of the `.cpp` file of each tool, and is template parameter `T` anywhere else in the library; and the type of different integer labels defined as `lab` and `pos` in [/src/search+/tree.hpp](/src/search+/tree.hpp).
 
 The usage of each tool can be seen by option `-h` or `--help`, including a short description of each command-line option. Some additional documentation is provided below. In all cases, hard-coded defaults enable a "demo" operation on the sample data with no options given at all.
 
 ### `train`
 
-Specified by [train.cpp](/src/train.cpp). Reads a set of input training data like those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space, trains one or more codebooks, and saves the codebooks in a custom binary format that is to be read by other tools. The codebooks are internally structured as binary trees over the dimensions of the space and contain additional data like lookup tables to be used for fast encoding (quantization) of new data.
+Specified by [train.cpp](/src/train.cpp). Reads a set of input training data like those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space; trains one or more codebooks, and saves the codebooks in a custom binary format that is to be read by other tools. The codebooks are internally structured as binary trees over the dimensions of the space and contain additional data like lookup tables to be used for fast encoding (quantization) of new data.
 
 The first few options refer to input/output files, paths, etc. and are rather self-explanatory. Option `--dataset` acts like a preset for other such options. All "presets" are hard-coded in [/src/options/data.hpp](/src/options/data.hpp) are can be freely changed in the source code, but each option can also be overriden. Option `--unit` is only used when a large dataset is split into individual units (chunks) stored under different folders.
 
@@ -85,9 +87,35 @@ Termination of training takes into account both progress towards convergence and
 
 ### `flat`
 
-### `nn`
+Because of the hierarchical structure and the custom binary file format, codebooks produced by `train` can only be read by the `drvq` library and tools. But codebooks are essentially sets of centroids (vectors), so tool `flat`, specified by [flat.cpp](/src/flat.cpp), "flattens" and exports centroids in a format that can be read e.g. by [load_double_array.m](/matlab/load_double_array.m) as a two-dimensional matrix in Matlab. These vectors can then be used in any application but without the fast encoding capabilities of `drvq`.
+
+If a single codebook is used, an array of centroids is generated, with each centroid represented as an array of `float`s. In the case of multiple codebooks, the format and size of the generated file is identical, but different parts of the data refer to different sub-codebooks. E.g. with SIFT vectors of length 128 and 4 codebooks, there is again an array of vectors, but now each vector of length 128 represents 4 concatenated centroids of length 32 each; each centroid belongs to a different codebook.
+
+There are no options for `flat` apart from those specifying the input/output files.
 
 ### `label`
+
+Specified by [label.cpp](/src/label.cpp). Reads a codebook file obtained by `train` and a a set of input data like those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space exactly as for `train`; encodes each given point according to the codebook(s) and saves the resulting integer label for each point.
+
+The first few options refer to input/output files, paths, etc. exactly as for `train` and are rather self-explanatory. The "demo" operation with no options actually runs on the same data as for `train`; in a real application, a different set of data would be provided.
+
+A single output file is generated, containing an array of vectors; each vector corresponds to one input file (e.g. to one image for our samples in [/data/](/data/)) and each vector element is a long unsigned integer (`size_t`) that represents one encoded data point.
+
+Given a new data point (vector) and a single codebook, encoding amounts to finding the nearest centroid and using the id of this centroid as a label. In the case of multiple codebooks, the vector is split into sub-vectors and for each sub-vector the nearest sub-centroid is found from the corresponding sub-codebook. The resulting labels are then encoded into a single integer. E.g. with SIFT vectors of length 128 and 4 codebooks, there are 4 labels, say l0, l1, l2, l3. These are encoded as
+
+	k^3 * l3 + k^2 *l2 + k * l1 + l0
+
+where k is the size of the sub-codebooks. On a 64-bit machine, k can be up to `2^16` for this to fit into a single integer.
+
+Finding the nearest centroid is a nearest-neighbor search problem in high dimensions. Given the data provided in the codebook, three methods are supported, as controlled by `--method`: `fast`, `approx`, and `exact`. `approx` is only experimental and does not really offer any benefit over `exact`, because it takes roughly the same time. `fast` is again approximate, based on lookup operations, and really fast but not very precise. It is the method that is used during training. `exact` is a lot slower but it is preferable in a real application where performance matters.
+
+### `nn`
+
+Specified by [nn.cpp](/src/nn.cpp). Reads a codebook file obtained by `train` and a a set of input data like those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space exactly as for `train`; performs an evaluation of the different nearest neighbor search methods of tool `label` and prints a set of measurements.
+
+It carries out search by naive, exhaustive computation, which is the slowest, verifies  correctness of method `exact`, and measures the precision of approximate methods `fast`, `approx` in a number of ways. Timings are provided for all methods. A set of input files is used for evaluation by default, and all measurements are averaged over all given query points (vectors).
+
+The first few options refer to input/output files, paths, etc. exactly as for `train` and `label`. Option `--query` can be specified to choose a single input file by its id from the given list of files; otherwise, all input files are considered. The remaining options are specific to the provide measurements and are rather self-explanatory.
 
 Citation
 --------
