@@ -3,5 +3,6 @@
 out/*.bin
 src/flat
 src/label
+src/lib/random.cpp
 src/nn
 src/train
