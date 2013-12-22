@@ -63,11 +63,13 @@ Tools
 
 All tools are provided as very simple, script-like `.cpp` files of few lines of code each, with all low-level implementation hidden in corresponding `.hpp` or other included files. Each `.cpp` file has a `main()` function and generates a command-line executable that can be used as a stand-alone tool for a particular job, using a rich set of command-line options. On the other hand, its source code illustrates how the library can be used, e.g. to integrate in other programs.
 
-The usage of each tool can be seen by option `-h` or `--help`, including a short description of each command-line option. Some additional documentation is provided below. In all cases, hard-coded defaults enable a ``demo'' operation on the sample data with no options given at all.
+The usage of each tool can be seen by option `-h` or `--help`, including a short description of each command-line option. Some additional documentation is provided below. In all cases, hard-coded defaults enable a "demo" operation on the sample data with no options given at all.
 
 ### `train`
 
-Tool `train`([train.cpp](/src/train.cpp)) reads a set of input training data as those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space, trains one or more codebooks, and saves the codebooks in a custom binary format that is to be read by other tools. The codebooks are internally structured as binary trees over the dimensions of the space and contain additional data like lookup tables to be used for fast encoding (quantization) of new data.
+Specified by [train.cpp](/src/train.cpp). Reads a set of input training data like those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space, trains one or more codebooks, and saves the codebooks in a custom binary format that is to be read by other tools. The codebooks are internally structured as binary trees over the dimensions of the space and contain additional data like lookup tables to be used for fast encoding (quantization) of new data.
+
+The first few options refer to input/output files, paths, etc. and are rather self-explanatory. Option `--dataset` acts like a preset for other such options. All "presets" are hard-coded in [/src/options/data.hpp](/src/options/data.hpp)
 
 ### `flat`
 
