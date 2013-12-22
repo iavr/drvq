@@ -30,7 +30,7 @@
 #ifndef TRAIN_TREE_HPP
 #define TRAIN_TREE_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -86,6 +86,6 @@ train(const array <array <T> >& X, const size_array& at,
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // TRAIN_TREE_HPP

@@ -34,7 +34,7 @@
 #include "options/label.hpp"
 #include "data/norm.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -259,6 +259,6 @@ public:
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // LABEL_HPP

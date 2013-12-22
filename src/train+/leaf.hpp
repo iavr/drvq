@@ -30,7 +30,7 @@
 #ifndef TRAIN_LEAF_HPP
 #define TRAIN_LEAF_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -287,6 +287,6 @@ public:
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // TRAIN_LEAF_HPP

@@ -32,7 +32,7 @@
 
 #include "data.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -155,6 +155,6 @@ struct train_args : public cmd_args <train_options, train_args>
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // OPTIONS_TRAIN_HPP

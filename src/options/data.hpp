@@ -30,7 +30,7 @@
 #ifndef OPTIONS_DATA_HPP
 #define OPTIONS_DATA_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -291,6 +291,6 @@ struct gt_options : public file_options
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // OPTIONS_DATA_HPP

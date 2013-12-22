@@ -35,7 +35,7 @@
 #include "search.hpp"
 #include "options/flat.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -77,11 +77,11 @@ void flatten(const flat_options& opt = flat_options())
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 int main(int argc, char* argv[])
 {
-	qc::flat_args opt(argc, argv);
-	qc::flatten(opt);
+	drvq::flat_args opt(argc, argv);
+	drvq::flatten(opt);
 	return 0;
 }

@@ -32,7 +32,7 @@
 
 #include "prop.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -87,8 +87,8 @@ class train_node : public node <T>, public train_tree <T>
 
 		// recurse
 		// TODO: X, at[dim_] -> X[dim_]
-		child0 = qc::train(X, at[dim0], opt);
-		child1 = qc::train(X, at[dim1], opt);
+		child0 = drvq::train(X, at[dim0], opt);
+		child1 = drvq::train(X, at[dim1], opt);
 		node <T>::child0 = static_cast <tree <T>*> (child0);
 		node <T>::child1 = static_cast <tree <T>*> (child1);
 
@@ -362,6 +362,6 @@ public:
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // TRAIN_NODE_HPP

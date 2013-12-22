@@ -30,7 +30,7 @@
 #ifndef SEARCH_NODE_HPP
 #define SEARCH_NODE_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -191,6 +191,6 @@ public:
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // SEARCH_NODE_HPP

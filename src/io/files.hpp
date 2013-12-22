@@ -30,7 +30,7 @@
 #ifndef IO_FILES_HPP
 #define IO_FILES_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -203,6 +203,6 @@ load_data(const O& opt, const string& name)
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // IO_FILES_HPP

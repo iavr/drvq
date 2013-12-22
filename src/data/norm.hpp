@@ -30,7 +30,7 @@
 #ifndef DATA_NORM_HPP
 #define DATA_NORM_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -85,6 +85,6 @@ void normalize(array <array <T> >& X, const O& opt)
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // DATA_NORM_HPP

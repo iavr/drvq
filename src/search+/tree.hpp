@@ -30,7 +30,7 @@
 #ifndef SEARCH_TREE_HPP
 #define SEARCH_TREE_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -73,6 +73,6 @@ template <typename T> class node;
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // SEARCH_TREE_HPP

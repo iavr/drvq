@@ -36,7 +36,7 @@
 #include "search.hpp"
 #include "train.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -91,11 +91,11 @@ void train(const train_options& opt = train_options())
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 int main(int argc, char* argv[])
 {
-	qc::train_args opt(argc, argv);
-	qc::train(opt);
+	drvq::train_args opt(argc, argv);
+	drvq::train(opt);
 	return 0;
 }

@@ -32,7 +32,7 @@
 
 #include "data.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -90,6 +90,6 @@ struct nn_args : public cmd_args <nn_options, nn_args>
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // OPTIONS_NN_HPP

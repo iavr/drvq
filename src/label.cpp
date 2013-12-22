@@ -35,7 +35,7 @@
 #include "search.hpp"
 #include "label.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -92,11 +92,11 @@ void label(const label_options& opt = label_options())
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 int main(int argc, char* argv[])
 {
-	qc::label_args opt(argc, argv);
-	opt.distortion ? qc::label <true> (opt) : qc::label <false> (opt);
+	drvq::label_args opt(argc, argv);
+	opt.distortion ? drvq::label <true> (opt) : drvq::label <false> (opt);
 	return 0;
 }

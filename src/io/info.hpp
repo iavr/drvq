@@ -30,7 +30,7 @@
 #ifndef IO_INFO_HPP
 #define IO_INFO_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -525,6 +525,6 @@ void eval_ap(yes, const array <T>& ap, const array <string>& queries)
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // IO_INFO_HPP

@@ -30,7 +30,7 @@
 #ifndef OPTIONS_FLAT_HPP
 #define OPTIONS_FLAT_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -71,6 +71,6 @@ struct flat_args : public cmd_args <flat_options, flat_args>
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // OPTIONS_FLAT_HPP

@@ -30,7 +30,7 @@
 #ifndef OPTIONS_SEARCH_HPP
 #define OPTIONS_SEARCH_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -91,6 +91,6 @@ struct search_args : public cmd_args <search_options, search_args>
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // OPTIONS_SEARCH_HPP

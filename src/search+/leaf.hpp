@@ -30,7 +30,7 @@
 #ifndef SEARCH_LEAF_HPP
 #define SEARCH_LEAF_HPP
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -148,6 +148,6 @@ public:
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 #endif  // SEARCH_LEAF_HPP

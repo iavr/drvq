@@ -36,7 +36,7 @@
 #include "search.hpp"
 #include "nn.hpp"
 
-namespace qc {
+namespace drvq {
 
 using namespace ivl;
 using namespace std;
@@ -134,11 +134,11 @@ void nn(const nn_options& opt = nn_options())
 
 //-----------------------------------------------------------------------------
 
-}  // namespace qc
+}  // namespace drvq
 
 int main(int argc, char* argv[])
 {
-	qc::nn_args opt(argc, argv);
-	qc::nn(opt);
+	drvq::nn_args opt(argc, argv);
+	drvq::nn(opt);
 	return 0;
 }
