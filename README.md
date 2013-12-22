@@ -3,7 +3,7 @@
 
 *dimensionality-recursive vector quantization*
 
-`drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in Euclidean spaces under arbitrary data distributions.
+`drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in high-dimensional Euclidean spaces under arbitrary data distributions.
 
 Licence
 -------
@@ -61,7 +61,13 @@ For each image, a binary file contains an array of descriptors, where each descr
 Tools
 -----
 
+All tools are provided as very simple, script-like `.cpp` files of few lines of code each, with all low-level implementation hidden in corresponding `.hpp` or other included files. Each `.cpp` file has a `main()` function and generates a command-line executable that can be used as a stand-alone tool for a particular job, using a rich set of command-line options. On the other hand, its source code illustrates how the library can be used, e.g. to integrate in other programs.
+
+The usage of each tool can be seen by option `-h` or `--help`, including a short description of each command-line option. Some additional documentation is provided below. In all cases, hard-coded defaults enable a ``demo'' operation on the sample data with no options given at all.
+
 ### `train`
+
+Tool `train`([train.cpp](/src/train.cpp)) reads a set of input training data as those provided under [/data/](/data/), representing a set of points (vectors) in a Euclidean space, trains one or more codebooks, and saves the codebooks in a custom binary format that is to be read by other tools. The codebooks are internally structured as binary trees over the dimensions of the space and contain additional data like lookup tables to be used for fast encoding (quantization) of new data.
 
 ### `flat`
 
