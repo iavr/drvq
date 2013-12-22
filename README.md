@@ -115,7 +115,7 @@ Specified by [nn.cpp](/src/nn.cpp). Reads a codebook file obtained by `train` an
 
 It carries out search by naive, exhaustive computation, which is the slowest, verifies  correctness of method `exact`, and measures the precision of approximate methods `fast`, `approx` in a number of ways. Timings are provided for all methods. A set of input files is used for evaluation by default, and all measurements are averaged over all given query points (vectors).
 
-With the default options and provided data, `exact` is roughly `10x` faster than naive computation, exhaustive computation, and `fast` is roughly `1000x` faster than `exact`.
+With the default options and provided data, `exact` is roughly `10x` faster than naive, exhaustive computation, and `fast` is roughly `1000x` faster than `exact`.
 
 The first few options refer to input/output files, paths, etc. exactly as for `train` and `label`. Option `--query` can be specified to choose a single input file by its id from the given list of files; otherwise, all input files are considered. The remaining options are specific to the provided measurements and are rather self-explanatory.
 
