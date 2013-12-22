@@ -52,9 +52,9 @@ Such files may be read/written by Matlab scripts [load_double_array.m](/matlab/l
 Sample data
 -----------
 
-With the specific information provided per tool below, one should be able to generate appropriate input and read the output of each tool. For convenience, a number of sample data files are provided under folder `/data/` so that all `drvq` tools may run immediately.
+With the specific information provided per tool below, one should be able to generate appropriate input and read the output of each tool. For convenience, a number of sample data files are provided under folder [/data/](/data/) so that all `drvq` tools may run immediately.
 
-These files are part of the actual experimental data that were used under development of `drvq`. In particular, under `/data/oxford/hesaff.sift/queries/descriptors/`, SIFT descriptors are given for each of the 55 cropped query images of [Oxford buildings dataset](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/), as obtained by [Hessian-affine detector](https://github.com/perdoch/hesaff). File `/data/oxford/files/queries.txt` contains a relevant list of filenames.
+These files are part of the actual experimental data that were used during development. In particular, under [/data/oxford/hesaff.sift/queries/descriptors/](/data/oxford/hesaff.sift/queries/descriptors/), SIFT descriptors are given for each of the 55 cropped query images of [Oxford buildings dataset](http://www.robots.ox.ac.uk/~vgg/data/oxbuildings/), as obtained by [Hessian-affine detector](https://github.com/perdoch/hesaff). File [/data/oxford/files/queries.txt](/data/oxford/files/queries.txt) contains a relevant list of filenames.
 
 For each image, a binary file contains an array of descriptors, where each descriptor is represented by an array of `float`s.
 
