@@ -47,7 +47,7 @@ Binary file format
 
 All input/output to all `drvq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers of any type.
 
-Such files may be read/written by Matlab scripts [load_double_array.m](/matlab/load_double_array.m) / [/matlab/save_double_array.m](save_double_array.m) under folder [/matlab/](/matlab/). An array of arrays is is represented by a two-dimensional matrix in Matlab, but any Matlab data type may be used. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under [/src/lib](/src/lib).
+Such files may be read/written by Matlab scripts [load_double_array.m](/matlab/load_double_array.m) / [save_double_array.m](/matlab/save_double_array.m) under folder [/matlab/](/matlab/). An array of arrays is is represented by a two-dimensional matrix in Matlab, but any Matlab data type may be used. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under [/src/lib](/src/lib).
 
 Sample data
 -----------
