@@ -124,4 +124,4 @@ Citation
 
 Please cite the following paper if you use this software.
 
-Yannis Avrithis. [Quantize and Conquer: A dimensionality-recursive solution to clustering, vector quantization, and image retrieval](http://image.ntua.gr/iva/publications/qc). In Proceedings of International Conference on Computer Vision (ICCV 2013), December 2013.
+Yannis Avrithis. [Quantize and Conquer: A dimensionality-recursive solution to clustering, vector quantization, and image retrieval](http://image.ntua.gr/iva/publications/qc). In Proceedings of International Conference on Computer Vision ([ICCV 2013](http://www.iccv2013.org/)), December 2013.
