@@ -3,12 +3,12 @@
 
 *dimensionality-recursive vector quantization*
 
-`drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in high-dimensional Euclidean spaces under arbitrary data distributions. Usage of the software is only provided here; for more information please refer to the [official software page](http://image.ntua.gr/iva/tools/drvq), the [research project](http://image.ntua.gr/iva/research/drvq), or the original publication ([abstract](http://image.ntua.gr/iva/publications/qc), [PDF](http://image.ntua.gr/iva/files/qc.pdf)).
+`drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in high-dimensional Euclidean spaces under arbitrary data distributions. Usage of the software is only described here; for more information on the methods used please refer to the [official software page](http://image.ntua.gr/iva/tools/drvq), the [research project](http://image.ntua.gr/iva/research/drvq), or the original publication ([abstract](http://image.ntua.gr/iva/publications/qc), [PDF](http://image.ntua.gr/iva/files/qc.pdf)).
 
 Licence
 -------
 
-`drvq` has a 2-clause BSD license. See file LICENSE for the complete license text.
+`drvq` has a 2-clause BSD license. See file [LICENSE](LICENSE) for the complete license text.
 
 Directory structure
 -------------------
