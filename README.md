@@ -29,16 +29,16 @@ Requirements
 Installation, building
 ----------------------
 
-No installation is needed. Command-line tools under folder [/src/](/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder `/run/` show how a tool may be compiled and executed, using either Clang or GCC.
+No installation is needed. Command-line tools under folder [/src/](/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder [/run/](/run/) show how a tool may be compiled and executed, using either Clang or GCC.
 
 `drvq` has only been tested on [clang 3.3](http://llvm.org/releases/download.html#3.3) and [g++ 4.8.1](http://gcc.gnu.org/gcc-4.8/) on Linux, but it should be straightfoward to use on other platforms.
 
-Script `/run/run` is for g++ and `/run/lrun` for clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case,
+Script [/run/run](/run/run) is for g++ and [/run/lrun](/run/lrun) for clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case,
 
 	cd src/
 	run train
 
-compiles file `/src/train.cpp`, produces binary `/src/train`, and executes it unless there are compiler or linker errors.
+compiles file [/src/train.cpp](/src/train.cpp), produces binary `/src/train`, and executes it unless there are compiler or linker errors.
 
 Extension `.cpp` is not necessary for the main source file. Additional source files or compiler options may be specified as additional command-line arguments, but extensions are needed for extra source files.
 
