@@ -29,25 +29,25 @@ Requirements
 Installation, building
 ----------------------
 
-No installation is needed. Command-line tools under folder [/src/](/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile; scripts under folder [/run/](/run/) show how a tool may be compiled and executed, using either Clang or GCC.
+No installation is needed or provided. Command-line tools under folder [/src/](/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile, and scripts under [/run/](/run/) show how a tool may be compiled and executed, using either Clang or GCC.
 
 `drvq` has only been tested on [clang 3.3](http://llvm.org/releases/download.html#3.3) and [g++ 4.8.1](http://gcc.gnu.org/gcc-4.8/) on Linux, but it should be straightfoward to use on other platforms.
 
-Script [/run/run](/run/run) is for g++ and [/run/lrun](/run/lrun) for clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case,
+Script [/run/run](/run/run) is for GCC and [/run/lrun](/run/lrun) for Clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case,
 
 	cd src/
 	run train
 
-compiles file [/src/train.cpp](/src/train.cpp), produces binary `/src/train`, and executes it unless there are compiler or linker errors.
+compiles file [/src/train.cpp](/src/train.cpp), produces binary `/src/train`, and executes it unless there are compiler or linker errors. If `ivl` is properly installed, compilation may be even simpler, without specifying the include folder with `-I`.
 
 Extension `.cpp` is not necessary for the main source file. Additional source files or compiler options may be specified as additional command-line arguments, but extensions are needed for extra source files.
 
 Binary file format
 ------------------
 
-All input/output to all `drcq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers, with several types supported for numbers.
+All input/output to all `drvq` tools is based on a binary file format, using a file extension `.bin`. With the exception of codebooks (file `codebook.bin`) produced by tool `train` and used by other tools, all other input/output files each contain an array of arrays of numbers of any type.
 
-Such files may be read/written by Matlab scripts `load_double_array.m`/`save_double_array.m` under folder `/matlab/`. Data is represented by two-dimensional matrices in Matlab. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under `/src/lib`.
+Such files may be read/written by Matlab scripts [load_double_array.m](load_double_array.m)/[save_double_array.m](save_double_array.m) under folder [/matlab/](/matlab/). An array of arrays is is represented by a two-dimensional matrix in Matlab, but any Matlab data type may be used. These scripts are very simple and may serve as a specification for input/output tools in other platforms. For C++, input/output is handled by template functions under [/src/lib](/src/lib).
 
 Sample data
 -----------
