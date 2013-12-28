@@ -24,7 +24,7 @@ Directory structure
 Requirements
 ------------
 
-`drvq` implementation is based on C++ template library [ivl](http://image.ntua.gr/ivl/), which may be downloaded from [sourceforge.net](http://sourceforge.net/projects/ivl/files/) and [installed](http://image.ntua.gr/ivl/download.php) on a number of platforms.
+`drvq` implementation is based on C++ template library [ivl](http://image.ntua.gr/ivl/), which may be downloaded from [sourceforge.net](http://sourceforge.net/projects/ivl/files/) and [installed](http://image.ntua.gr/ivl/download.php) on a number of platforms. To avoid future instabilities, prefer [version 0.9.2]( http://sourceforge.net/projects/ivl/files/src/ivl-0.9.2-src.tar.gz) that was used during `drvq` development.
 
 Installation, building
 ----------------------
