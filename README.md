@@ -35,7 +35,7 @@ Installation, building
 
 `drvq` has only been tested on [clang 3.3](http://llvm.org/releases/download.html#3.3) and [g++ 4.8.1](http://gcc.gnu.org/gcc-4.8/) on Linux, but it should be straightfoward to use on other platforms.
 
-No installation is needed or provided for `drvq`. Command-line tools under folder [/src/](/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile, and scripts under [/run/](/run/) show how a tool may be compiled and executed, using either Clang or GCC.
+No installation is needed or provided for `drvq`. Command-line tools under folder [/src/](/src/) illustrate how the library may be used and may be compiled with minimal options without a Makefile, and scripts under [/run/](/run/) show how a tool may be compiled and executed.
 
 Script [/run/run](/run/run) is for GCC and [/run/lrun](/run/lrun) for Clang. It is best to copy them in a folder in your path, e.g. `/usr/local/bin`, after adjusting folders for your local copy of `ivl`. In this case, starting from the folder where `drvq` resides,
 
