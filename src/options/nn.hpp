@@ -68,6 +68,8 @@ struct nn_options : public descriptor_options, public online_options
 
 struct nn_args : public cmd_args <nn_options, nn_args>
 {
+	typedef cmd_args <nn_options, nn_args> base;
+
 	template <typename C>
 	void args(C cmd)
 	{
@@ -85,7 +87,7 @@ struct nn_args : public cmd_args <nn_options, nn_args>
 		set(cmd, "rat_step",     rat_step,   "Hs", "distance ratio step");
 	}
 
-	nn_args(int argc, char* argv[]) : cmd_args(argc, argv) { done(); }
+	nn_args(int argc, char* argv[]) : base(argc, argv) { done(); }
 };
 
 //-----------------------------------------------------------------------------

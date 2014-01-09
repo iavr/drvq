@@ -66,7 +66,7 @@ struct label_options : public descriptor_options, public offline_options
 
 struct label_args : public cmd_args <label_options, label_args>
 {
-	typedef label_options base;
+	typedef cmd_args <label_options, label_args> base;
 
 	template <typename C>
 	void args(C cmd)
@@ -81,7 +81,7 @@ struct label_args : public cmd_args <label_options, label_args>
 		set(cmd, "range",      range,      "r",  "range of edge weights to explore in method 1 (> 0)");
 	}
 
-	label_args(int argc, char* argv[]) : cmd_args(argc, argv) { done(); }
+	label_args(int argc, char* argv[]) : base(argc, argv) { done(); }
 };
 
 //-----------------------------------------------------------------------------

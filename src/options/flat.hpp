@@ -57,7 +57,7 @@ struct flat_options
 
 struct flat_args : public cmd_args <flat_options, flat_args>
 {
-	typedef flat_options base;
+	typedef cmd_args <flat_options, flat_args> base;
 
 	template <typename C>
 	void args(C cmd)
@@ -66,7 +66,7 @@ struct flat_args : public cmd_args <flat_options, flat_args>
 		set(cmd, "book",       book,       "b",  "codebook file name");
 	}
 
-	flat_args(int argc, char* argv[]) : cmd_args(argc, argv) { done(); }
+	flat_args(int argc, char* argv[]) : base(argc, argv) { done(); }
 };
 
 //-----------------------------------------------------------------------------

@@ -71,6 +71,8 @@ struct search_options
 
 struct search_args : public cmd_args <search_options, search_args>
 {
+	typedef cmd_args <search_options, search_args> base;
+
 	template <typename C>
 	void args(C cmd)
 	{
@@ -86,7 +88,7 @@ struct search_args : public cmd_args <search_options, search_args>
 		set(cmd, "top",    top,    "t",  "number of top files to re-rank");
 	}
 
-	search_args(int argc, char* argv[]) : cmd_args(argc, argv) { done(); }
+	search_args(int argc, char* argv[]) : base(argc, argv) { done(); }
 };
 
 //-----------------------------------------------------------------------------

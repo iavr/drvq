@@ -3,7 +3,7 @@
 
 *dimensionality-recursive vector quantization*
 
-`drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in high-dimensional Euclidean spaces under arbitrary data distributions. Usage of the software is only described here; for more information on the methods used please refer to the [DRVQ software page](http://image.ntua.gr/iva/tools/drvq), the [research project](http://image.ntua.gr/iva/research/drvq), or the original publication ([abstract](http://image.ntua.gr/iva/publications/qc), [PDF](http://image.ntua.gr/iva/files/qc.pdf)). The [latest stable release](https://sourceforge.net/projects/drvq/files/) is available for download at [SourceForge](https://sourceforge.net/projects/drvq/).
+`drvq` is a C++ library implementation of [dimensionality-recursive vector quantization](http://image.ntua.gr/iva/research/drvq), a fast vector quantization method in high-dimensional Euclidean spaces under arbitrary data distributions. Usage of the software is only described here; for more information on the methods used please refer to the [DRVQ software page](http://image.ntua.gr/iva/tools/drvq), the [research project](http://image.ntua.gr/iva/research/drvq), or the original publication ([abstract](http://image.ntua.gr/iva/publications/qc), [PDF](http://image.ntua.gr/iva/files/qc.pdf)). The [latest stable release](https://sourceforge.net/projects/drvq/files/) is available for download at [SourceForge](https://sourceforge.net/projects/drvq/), and the latest development version is at [github](https://github.com/iavr/drvq). This README file is better viewed online [here](https://github.com/iavr/drvq/blob/master/README.md).
 
 Licence
 -------

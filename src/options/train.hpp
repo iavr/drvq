@@ -134,6 +134,8 @@ public:
 
 struct train_args : public cmd_args <train_options, train_args>
 {
+	typedef cmd_args <train_options, train_args> base;
+
 	template <typename C>
 	void args(C cmd)
 	{
@@ -150,7 +152,7 @@ struct train_args : public cmd_args <train_options, train_args>
 		set_capacity();
 	}
 
-	train_args(int argc, char* argv[]) : cmd_args(argc, argv) { done(); }
+	train_args(int argc, char* argv[]) : base(argc, argv) { done(); }
 };
 
 //-----------------------------------------------------------------------------
